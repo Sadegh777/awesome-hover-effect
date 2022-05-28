@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+/* 3 After I added the 2 remained boxes, to change direction, flex direction added to the flex box */
+/* 3.1 we need space between boxes, gap added */
+body {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-color: #27282c;
+  flex-direction: column;
+  gap: 50px;
+}
+/* after span we backed and changed the color from black to with */
+a {
+  position: relative;
+  background: #fff;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+  padding: 10px 30px;
+  border-radius: 2px;
+  transition: 0.5s;
+}
+
+/* 1 Colors */
+/* 2 at the beginning , to ease our steps, we start by reset, body, a, and first a hover(letter-spacing) and then add the second
+class to a that was blue and working on it */
+
+.blue {
+  --clr: #2979ff;
+}
+
+/* 11 */
+.green{
+  --clr: #00c853;
+}
+
+.red {
+  --clr: #f50057; 
+}
+.orang {
+  --clr: #EE5007;
+}
+/* 6 we need to change the color of the boxes b y hovering, so the "Color " added */
+a:hover {
+  background: var(--clr);
+  color: var(--clr);
+  letter-spacing: 0.25em;
+  box-shadow: 0 0 30px var(--clr);
+}
+
+/* 4 after the boxes added and I was happy with the gap between them, the next element to a tag added  */
+
+a::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #27282c;
+}
+
+/* 5 then span */
+
+a span {
+  position: relative;
+  z-index: 1;
+}
+
+/* 7 */
+
+a i {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+/* 8 */
+/* alert, don't put space before :: */
+/* by transition the gap location changed, and its edge changed by skew */
+a i::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 80%;
+  width: 15px;
+  height: 5px;
+  background-color: #27282c;
+  transform: translateX(-50%) skewX(325deg);
+  transition: 0.5s;
+}
+
+/* 9 */
+
+a:hover i::before {
+  width: 20px;
+  left: 20%;
+}
+
+/* 10 */
+
+a i::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  width: 15px;
+  height: 5px;
+  background-color: #27282c;
+  transform: translateX(-50%) skewX(325deg);
+  transition: 0.5s;
+}
+
+a:hover i::after {
+  width: 20px;
+  left: 80%;
+}
